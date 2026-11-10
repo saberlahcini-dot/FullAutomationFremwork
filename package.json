@@ -1,0 +1,22 @@
+{
+  "name": "plywright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sh -c 'npx playwright test --reporter=list; node /c/Users/user.lahcini/Desktop/plywright/Apis/sendRepport.js'"
+  },
+  "types": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.4"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "dotenv": "^18.0.7"
+  }
+}

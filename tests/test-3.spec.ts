@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://chromewebstore.google.com/?hl=fr');
+  await page.getByRole('link', { name: 'Oui' }).click();
+  const page1Promise = page.waitForEvent('popup');
+  await page.locator('iframe[title="Meet Gemini in Chrome"]').contentFrame().getByRole('link', { name: 'Watch on YouTube' }).click();
+  const page1 = await page1Promise;
+  await page1.getByRole('button', { name: 'Sort comments' }).click();
+  await page1.locator('#sort-menu a').filter({ hasText: 'Newest Show recent comments,' }).click();
+  await page1.locator('ytd-comment-view-model').filter({ hasText: '@everyphonkmakerfan 2 days' }).getByLabel('Like this comment along with').click();
+  await page1.locator('ytd-modal-with-title-and-button-renderer').getByRole('link', { name: 'Sign in' }).click();
+  await page1.getByRole('textbox', { name: 'Email or phone' }).click();
+  await page1.getByRole('textbox', { name: 'Email or phone' }).fill('zeffefrefgregegrrg@gmail.com');
+  await page1.getByRole('textbox', { name: 'Email or phone' }).press('Enter');
+  await page1.getByRole('link', { name: 'Try again' }).click();
+  await page1.getByRole('textbox', { name: 'Email or phone' }).click();
+  await page1.getByRole('textbox', { name: 'Email or phone' }).fill('dzdzdzefrrgrgrg@jaba');
+  await page1.getByRole('button', { name: 'Next' }).click();
+  await page1.getByRole('combobox', { name: 'Change language English (' }).click();
+  await page1.getByRole('option', { name: 'Italiano' }).click();
+  await page1.getByRole('button', { name: 'Non ricordi l\'indirizzo email?' }).click();
+  await page1.getByRole('textbox', { name: 'Numero di telefono o email' }).click();
+  await page1.getByRole('textbox', { name: 'Numero di telefono o email' }).fill('fezezffezfezzfecfrvvfvv');
+  await page1.getByRole('button', { name: 'Avanti' }).click();
+  await page1.getByRole('textbox', { name: 'Nome', exact: true }).fill('evd');
+  await page1.getByRole('textbox', { name: 'Nome', exact: true }).click();
+  await page1.getByRole('textbox', { name: 'Nome', exact: true }).fill('evdvf');
+  await page1.getByRole('textbox', { name: 'Cognome (facoltativo)' }).click();
+  await page1.getByRole('textbox', { name: 'Cognome (facoltativo)' }).fill('gqreqrge');
+  await page1.getByRole('button', { name: 'Avanti' }).click();
+});
